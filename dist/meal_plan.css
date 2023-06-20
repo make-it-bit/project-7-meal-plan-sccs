@@ -1,0 +1,6 @@
+/*!***********************************************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/postcss-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./scss/meal-plan.scss ***!
+  \***********************************************************************************************************************************************************/
+body{margin-left:0;margin-right:0;margin-top:0}@font-face{font-family:Sublem;font-weight:400;src:url(bde19624f706dccd2ca3.ttf) format("truetype")}:root{--topnav-font:"Sublem"}.topnav{color:#000;font-family:var(--topnav-font);margin-bottom:20px;overflow:hidden}.topnav a{color:#000;float:left;font-size:1.4rem;padding:14px 16px;text-align:center;text-decoration:none}.topnav a:hover{background-color:#e4e4e4}.topnav a.active{background-color:#bdbdbd}.page-content{align-items:center;background-color:red;display:flex;flex-direction:column}.text-center{text-align:center}.col-12{border:1px solid #000;margin-bottom:1rem}.flex-direction-column{display:flex;flex-direction:column;gap:.2rem}
+
+/*# sourceMappingURL=meal_plan.css.map*/

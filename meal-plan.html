@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal plan</title>
+    <link href="./dist/main.css" rel="stylesheet" type="text/css" />
+    <link href="./dist/meal_plan.css" rel="stylesheet" type="text/css" />
+    <link
+      href="./node_modules/bootstrap/dist/css/bootstrap-grid.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="./node_modules/bootstrap/dist/css/bootstrap-grid.rtl.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="./node_modules/bootstrap/dist/css/bootstrap-grid.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="./node_modules/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <div class="topnav">
+      <a href="./index.html">Home</a>
+      <a class="active" href="./meal-plan.html">Meal plan</a>
+    </div>
+    <div class="page-content">
+      <div class="container" style="background-color: silver">
+        <div class="row">
+          <div class="col-12 flex-direction-column">
+            <label for="height">Height</label>
+            <input type="text" id="height" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 flex-direction-column">
+            <label for="weight">Weight</label>
+            <input type="text" id="weight" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 flex-direction-column">
+            <label for="age">Age</label>
+            <input type="text" id="age" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <label for="gender-male">Male</label>
+            <input type="radio" id="gender-male" />
+          </div>
+          <div class="col-6">
+            <label for="gender-female">Female</label>
+            <input type="radio" id="gender-female" />
+          </div>
+        </div>
+        <div class="row" id="activity-levels">
+          <label for="activity-levels">Activity Level</label>
+          <div class="col-12">
+            <input type="radio" id="activity-sedentary" />
+            <label for="activity-sedentary">Sedentary</label>
+          </div>
+          <div class="col-12">
+            <input type="radio" id="activity-lighty-active" />
+            <label for="activity-lighty-active">Lightly Active</label>
+          </div>
+          <div class="col-12">
+            <input type="radio" id="activity-active" />
+            <label for="activity-active">Active</label>
+          </div>
+          <div class="col-12">
+            <input type="radio" id="activity-very-active" />
+            <label for="activity-very-active">Very Active</label>
+          </div>
+          <div class="col-12">
+            <input type="radio" id="activity-extremely-active" />
+            <label for="activity-extremely-active">Extremely Active</label>
+          </div>
+        </div>
+        <div class="row" id="goals">
+          <label for="goals">Goal</label>
+          <div class="col-12">
+            <input type="radio" id="goal-lose-weight" />
+            <label for="goal-lose-weight">Lose Weight</label>
+          </div>
+          <div class="col-12">
+            <input type="radio" id="goal-maintain-weight" />
+            <label for="goal-maintain-weight">Maintain Weight</label>
+          </div>
+          <div class="col-12">
+            <input type="radio" id="goal-gain-weight" />
+            <label for="goal-gain-weight">Gain Weight</label>
+          </div>
+        </div>
+        <div class="row" id="diets">
+          <label for="diets">Diet</label>
+          <div class="col-12">
+            <input type="radio" id="diet-normal" />
+            <label for="diet-normal">Normal</label>
+          </div>
+          <div class="col-12">
+            <input type="radio" id="diet-vegetarian" />
+            <label for="diet-vegetarian">Vegetarian</label>
+          </div>
+          <div class="col-12">
+            <input type="radio" id="diet-vegan" />
+            <label for="diet-vegan">Vegan</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

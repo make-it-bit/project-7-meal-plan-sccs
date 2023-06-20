@@ -1,0 +1,14 @@
+@import './reset.scss';
+@import './colors.scss';
+@import './main.scss';
+
+.col-12 {
+  margin-bottom: 1rem;
+  border: solid 1px black;
+}
+
+.flex-direction-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
