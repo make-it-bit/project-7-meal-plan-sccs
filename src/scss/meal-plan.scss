@@ -1,14 +1,28 @@
 @import './reset.scss';
 @import './colors.scss';
+@import './fonts.scss';
 @import './main.scss';
 
-.col-12 {
+.col-12,
+.col-6 {
   margin-bottom: 1rem;
   border: solid 1px black;
+}
+
+.col-12 input[type='text'] {
+  border-radius: 6px;
+  height: 32px;
+  padding-left: 10px;
+  border: solid 1px $border-color;
 }
 
 .flex-direction-column {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+}
+
+.form-label {
+  font-family: $ubuntu-font, Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
 }

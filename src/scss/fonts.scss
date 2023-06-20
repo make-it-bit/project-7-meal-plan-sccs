@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Sublem';
+  src: url(../../fonts/sublem.ttf) format('truetype');
+  font-weight: normal;
+}
+$sublem-font: 'Sublem';
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url(../../fonts/ubuntu-regular.ttf) format(truetype);
+  font-weight: normal;
+}
+$ubuntu-font: 'Ubuntu';
