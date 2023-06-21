@@ -1,44 +1,24 @@
 const handleUserFormInput = () => {
-  // const inputHeight = document.getElementById('input-height').value;
-  // const inputWeight = document.getElementById('input-weight').value;
-  // const inputAge = document.getElementById('input-age').value;
-
-  // const inputGender = document
-  //   .getElementById('genders')
-  //   .querySelector('input[type="radio"]:checked').value;
-
-  // const inputAcvity = document
-  //   .getElementById('activity-levels')
-  //   .querySelector('input[type="radio"]:checked').value;
-
-  location.href = 'meal-plan.html';
-  // writeQueryString({
-  //   calories: calculateCalories(
-  //     inputGender,
-  //     inputHeight,
-  //     inputWeight,
-  //     inputAge,
-  //     inputAcvity
-  //   ),
-  // });
-  writeQueryString({ hello: 'world' });
-};
-
-const readUserInputFormIngredients = () => {
+  const inputHeight = document.getElementById('input-height').value;
+  const inputWeight = document.getElementById('input-weight').value;
+  const inputAge = document.getElementById('input-age').value;
+  const inputGender = document
+    .getElementById('genders')
+    .querySelector('input[type="radio"]:checked').value;
+  const inputAcvity = document
+    .getElementById('activity-levels')
+    .querySelector('input[type="radio"]:checked').value;
   const ingredients = document.getElementById('ingredients');
-  // TODO: add format validation
-};
+  // TODO: add validations for all fields (null check, format check)
 
-const writeQueryString = (searchParams) => {
-  const queryString = new URLSearchParams(searchParams);
-  history.replaceState(
-    '',
-    '',
-    `${window.location.pathname}?${queryString.toString()}`
+  const caloriesAmount = calculateCalories(
+    inputGender,
+    inputHeight,
+    inputWeight,
+    inputAge,
+    inputAcvity
   );
-  console.log('window.location.pathname: ', window.location.pathname);
 };
-
 const calculateCalories = (gender, height, weight, age, activityLevel) => {
   let bmrCoefficent = 0;
   activityLevel = activityLevel.toLowerCase();
@@ -60,14 +40,23 @@ const calculateCalories = (gender, height, weight, age, activityLevel) => {
       break;
   }
 
-  let caloriesAmount = 0;
   if (gender === 'male') {
-    caloriesAmount =
-      (66.5 + 13.75 * weight + 5.003 * height - 6.75 * age) * bmrCoefficent;
+    return (
+      (66.5 + 13.75 * weight + 5.003 * height - 6.75 * age) * bmrCoefficent
+    );
   } else {
-    caloriesAmount =
-      (655.1 + 9.563 * weight + 1.85 * height - 4.676 * age) * bmrCoefficent;
+    return (
+      (655.1 + 9.563 * weight + 1.85 * height - 4.676 * age) * bmrCoefficent
+    );
   }
+};
 
-  console.log(caloriesAmount);
+const getRecepies = async (caloriesAmount, ingredients) => {
+  const APP_ID = c34ab5d9;
+  const APP_KEY = a7a5284e0132e033649dbbd050765bf7;
+  const URL_BASE = 'https://api.edamam.com/api/recipes/v2?type=public';
+
+  const url = `${URL_BASE}&q=${encodeURIComponent(
+    ingredients
+  )}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=Breakfast&calories=${caloriesAmount}`;
 };
