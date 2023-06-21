@@ -1,3 +1,23 @@
+const handleUserInput = () => {
+  const inputHeight = document.getElementById('input-height').value;
+  const inputWeight = document.getElementById('input-weight').value;
+  const inputAge = document.getElementById('input-age').value;
+
+  const inputGender = document
+    .getElementById('genders')
+    .querySelector('input[type="radio"]:checked').value;
+
+  const inputAcvity = document
+    .getElementById('activity-levels')
+    .querySelector('input[type="radio"]:checked').value;
+
+  console.log('inputHeight: ', inputHeight);
+  console.log('inputWeight: ', inputWeight);
+  console.log('inputAge: ', inputAge);
+  console.log('inputGender: ', inputGender);
+  console.log('inputAcvity: ', inputAcvity);
+};
+
 const calculateCalories = (gender, height, weight, age, activityLevel) => {
   let bmrCoefficent = 0;
   activityLevel = activityLevel.toLowerCase();
