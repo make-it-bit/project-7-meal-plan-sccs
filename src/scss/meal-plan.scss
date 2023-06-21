@@ -3,10 +3,30 @@
 @import './fonts.scss';
 @import './main.scss';
 
+.row-border {
+  border: solid 1px silver;
+  border-radius: 5px;
+}
+
+.row {
+  margin-bottom: 30px;
+}
+
+.col-6 {
+  padding: 5px;
+}
+
 .col-12,
 .col-6 {
-  margin-bottom: 1rem;
-  border: solid 1px black;
+  font-family: $ubuntu-font, Arial, Helvetica, sans-serif;
+}
+
+.col-6 input[type='radio'] {
+  // display: none;
+}
+
+.col-6 {
+  font-size: 1.4rem;
 }
 
 .col-12 input[type='text'] {
@@ -19,10 +39,20 @@
 .flex-direction-column {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.5rem;
 }
 
 .form-label {
   font-family: $ubuntu-font, Arial, Helvetica, sans-serif;
   font-size: 1.4rem;
+}
+
+.form-input-gender:hover {
+  background-color: $form-hover-color;
+  color: white;
+}
+
+.container h1 {
+  font-family: $ubuntu-font, Arial, Helvetica, sans-serif;
+  font-size: 2rem;
 }

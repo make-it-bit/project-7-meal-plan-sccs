@@ -34,6 +34,7 @@
     </div>
     <div class="page-content">
       <div class="container">
+        <h1 class="text-center">Macro Meal Plan Generator</h1>
         <div class="row">
           <div class="col-12 flex-direction-column">
             <label class="form-label" for="height">Height</label>
@@ -52,66 +53,78 @@
             <input type="text" id="age" />
           </div>
         </div>
-        <div class="row">
-          <div class="col-6">
+        <div class="row text-center row-border" id="genders">
+          <div class="col-6 form-input-gender">
+            <input type="radio" id="gender-male" name="gender" />
             <label for="gender-male">Male</label>
-            <input type="radio" id="gender-male" />
           </div>
-          <div class="col-6">
+          <div class="col-6 form-input-gender">
+            <input type="radio" id="gender-female" name="gender" />
             <label for="gender-female">Female</label>
-            <input type="radio" id="gender-female" />
           </div>
         </div>
         <div class="row" id="activity-levels">
           <label class="form-label" for="activity-levels">Activity Level</label>
           <div class="col-12">
-            <input type="radio" id="activity-sedentary" />
+            <input type="radio" id="activity-sedentary" name="activity-level" />
             <label for="activity-sedentary">Sedentary</label>
           </div>
           <div class="col-12">
-            <input type="radio" id="activity-lighty-active" />
+            <input
+              type="radio"
+              id="activity-lighty-active"
+              name="activity-level"
+            />
             <label for="activity-lighty-active">Lightly Active</label>
           </div>
           <div class="col-12">
-            <input type="radio" id="activity-active" />
+            <input type="radio" id="activity-active" name="activity-level" />
             <label for="activity-active">Active</label>
           </div>
           <div class="col-12">
-            <input type="radio" id="activity-very-active" />
+            <input
+              type="radio"
+              id="activity-very-active"
+              name="activity-level"
+            />
             <label for="activity-very-active">Very Active</label>
           </div>
           <div class="col-12">
-            <input type="radio" id="activity-extremely-active" />
+            <input
+              type="radio"
+              id="activity-extremely-active"
+              name="activity-level"
+            />
             <label for="activity-extremely-active">Extremely Active</label>
           </div>
         </div>
         <div class="row" id="goals">
           <label class="form-label" for="goals">Goal</label>
           <div class="col-12">
-            <input type="radio" id="goal-lose-weight" />
+            <input type="radio" id="goal-lose-weight" name="goal" />
             <label for="goal-lose-weight">Lose Weight</label>
           </div>
           <div class="col-12">
-            <input type="radio" id="goal-maintain-weight" />
+            <input type="radio" id="goal-maintain-weight" name="goal" />
             <label for="goal-maintain-weight">Maintain Weight</label>
           </div>
           <div class="col-12">
-            <input type="radio" id="goal-gain-weight" />
+            <input type="radio" id="goal-gain-weight" name="goal" />
             <label for="goal-gain-weight">Gain Weight</label>
           </div>
         </div>
         <div class="row" id="diets">
           <label class="form-label" for="diets">Diet</label>
           <div class="col-12">
-            <input type="radio" id="diet-normal" />
+            <input type="radio" id="diet-normal" name="diet" />
             <label for="diet-normal">Normal</label>
           </div>
           <div class="col-12">
-            <input type="radio" id="diet-vegetarian" />
+            <input type="radio" id="diet-vegetarian" name="diet" />
             <label for="diet-vegetarian">Vegetarian</label>
           </div>
           <div class="col-12">
-            <input type="radio" id="diet-vegan" />
+            <input type="radio" id="diet-vegan" name="diet" />
             <label for="diet-vegan">Vegan</label>
           </div>
         </div>
