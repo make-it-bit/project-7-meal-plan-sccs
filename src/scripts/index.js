@@ -1,21 +1,42 @@
-const handleUserInput = () => {
-  const inputHeight = document.getElementById('input-height').value;
-  const inputWeight = document.getElementById('input-weight').value;
-  const inputAge = document.getElementById('input-age').value;
+const handleUserFormInput = () => {
+  // const inputHeight = document.getElementById('input-height').value;
+  // const inputWeight = document.getElementById('input-weight').value;
+  // const inputAge = document.getElementById('input-age').value;
 
-  const inputGender = document
-    .getElementById('genders')
-    .querySelector('input[type="radio"]:checked').value;
+  // const inputGender = document
+  //   .getElementById('genders')
+  //   .querySelector('input[type="radio"]:checked').value;
 
-  const inputAcvity = document
-    .getElementById('activity-levels')
-    .querySelector('input[type="radio"]:checked').value;
+  // const inputAcvity = document
+  //   .getElementById('activity-levels')
+  //   .querySelector('input[type="radio"]:checked').value;
 
-  console.log('inputHeight: ', inputHeight);
-  console.log('inputWeight: ', inputWeight);
-  console.log('inputAge: ', inputAge);
-  console.log('inputGender: ', inputGender);
-  console.log('inputAcvity: ', inputAcvity);
+  location.href = 'meal-plan.html';
+  // writeQueryString({
+  //   calories: calculateCalories(
+  //     inputGender,
+  //     inputHeight,
+  //     inputWeight,
+  //     inputAge,
+  //     inputAcvity
+  //   ),
+  // });
+  writeQueryString({ hello: 'world' });
+};
+
+const readUserInputFormIngredients = () => {
+  const ingredients = document.getElementById('ingredients');
+  // TODO: add format validation
+};
+
+const writeQueryString = (searchParams) => {
+  const queryString = new URLSearchParams(searchParams);
+  history.replaceState(
+    '',
+    '',
+    `${window.location.pathname}?${queryString.toString()}`
+  );
+  console.log('window.location.pathname: ', window.location.pathname);
 };
 
 const calculateCalories = (gender, height, weight, age, activityLevel) => {
