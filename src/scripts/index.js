@@ -134,38 +134,33 @@ const getRecepies = async () => {
     const activityLevel = await getUserInputActivity();
     const ingredients = await getUserInputIngredients();
     hideErrorMessage();
+
+    const caloriesAmount = calculateCalories(
+      gender,
+      height,
+      weight,
+      age,
+      activityLevel
+    );
+
+    if (caloriesAmount) {
+      const url = `${URL_BASE}&q=${encodeURIComponent(
+        ingredients
+      )}&app_id=${APP_ID}&app_key=${APP_KEY}&imageSize=REGULAR&mealType=Breakfast&calories=${caloriesAmount}`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log(data);
+        hideErrorMessage();
+        return data;
+      } catch (error) {
+        showErrorMessage(`Could not get data`);
+      }
+    }
   } catch (error) {
     showErrorMessage(error);
   }
-
-  // const weight = getUserInputWeight();
-  // const age = getUserInputAge();
-  // const activityLevel = getUserInputActivity();
-  // const gender = getUserInputGender();
-
-  // const caloriesAmount = calculateCalories(
-  //   gender,
-  //   height,
-  //   weight,
-  //   age,
-  //   activityLevel
-  // );
-
-  // if (caloriesAmount) {
-  //   const url = `${URL_BASE}&q=${encodeURIComponent(
-  //     ingredients
-  //   )}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=Breakfast&calories=${caloriesAmount}`;
-
-  //   try {
-  //     const response = await fetch(url);
-  //     const data = await response.json();
-  //     hideErrorMessage();
-  //     console.log(data);
-  //     return data;
-  //   } catch (error) {
-  //     showErrorMessage(`Could not get data`);
-  //   }
-  // }
 };
 
 const redirectToPage = () => {
