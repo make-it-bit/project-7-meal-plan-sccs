@@ -48,9 +48,16 @@ const getUserInputGender = () => {
 };
 
 const getUserInputActivity = () => {
-  return document
-    .getElementById('activity-levels')
-    .querySelector('input[type="radio"]:checked').value;
+  try {
+    const inputAcvityLevel = document
+      .getElementById('activity-levels')
+      .querySelector('input[type="radio"]:checked').value;
+    hideErrorMessage();
+    console.log('inputAcvityLevel: ', inputAcvityLevel);
+    return inputAcvityLevel;
+  } catch (error) {
+    showErrorMessage('Please specify activity level');
+  }
 };
 
 const getUserInputIngredients = () => {

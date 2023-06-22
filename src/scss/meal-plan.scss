@@ -42,6 +42,12 @@
   font-size: 1.4rem;
   height: 32px;
   padding-top: 4px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.col-12 label {
+  margin-left: 10px;
 }
 
 .col-12 input[type='text'] {
@@ -57,6 +63,29 @@
   border: solid 1px $form-active-color;
   box-shadow: $form-focus-color 0px 2px 4px 0px,
     $form-focus-color 0px 2px 16px 0px;
+}
+
+.radio-selection {
+  margin-bottom: 15px;
+  padding: 10px;
+  margin-right: 8px;
+}
+
+.radio-selection input[type='radio'] {
+  // display: none;
+}
+
+.radio-selection span {
+  font-weight: bold;
+}
+
+.radio-selection p {
+  margin: 0;
+  margin-top: 0.6rem;
+}
+
+input[type='radio']:checked + label {
+  background-color: green;
 }
 
 .flex-direction-column {
@@ -75,11 +104,6 @@
   font-size: 1.4rem;
   margin: 0;
   margin-bottom: 10px;
-}
-
-.form-input-gender:hover {
-  background-color: $form-active-color;
-  color: white;
 }
 
 .container h1 {

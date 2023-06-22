@@ -55,11 +55,11 @@
         </div>
         <div class="row flex-direction-column">
           <div class="col-12 flex-direction-row text-center">
-            <div class="col-6 form-input-gender border-left">
+            <div class="col-6 border-left">
               <input type="radio" id="gender-male" name="gender" value="male" />
               <label for="gender-male">Male</label>
             </div>
-            <div class="col-6 form-input-gender border-right">
+            <div class="col-6 border-right">
               <input
                 type="radio"
                 id="gender-female"
@@ -70,52 +70,19 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row" id="activity-levels">
           <p class="form-label">Activity level</p>
-          <div class="col-12 border-full">
-            <input
-              type="radio"
-              id="activity-sedentary"
-              name="activity-level"
-              value="sedentary"
-            />
-            <label for="activity-sedentary">Sedentary</label>
-          </div>
-          <div class="col-12 border-full">
-            <input
-              type="radio"
-              id="activity-lighty-active"
-              name="activity-level"
-              value="lightly active"
-            />
-            <label for="activity-lighty-active">Lightly Active</label>
-          </div>
-          <div class="col-12 border-full">
-            <input
-              type="radio"
-              id="activity-active"
-              name="activity-level"
-              value="active"
-            />
-            <label for="activity-active">Active</label>
-          </div>
-          <div class="col-12 border-full">
-            <input
-              type="radio"
-              id="activity-very-active"
-              name="activity-level"
-              value="very active"
-            />
-            <label for="activity-very-active">Very Active</label>
-          </div>
-          <div class="col-12 border-full">
-            <input
-              type="radio"
-              id="activity-extremely-active"
-              name="activity-level"
-              value="extremely active"
-            />
-            <label for="activity-extremely-active">Extremely Active</label>
+          <div class="col-12 flex-direction-column">
+            <label for="activity-sedentary" class="radio-selection border-full">
+              <input
+                type="radio"
+                id="activity-sedentary"
+                name="activity-level"
+                value="sedentary"
+              />
+              <span>Sedentary</span>
+              <p>No formal exercise and not physically active in daily life</p>
+            </label>
           </div>
         </div>
         <div class="row">
@@ -198,7 +165,7 @@
         <div class="error-container" id="error-container">
           <p id="error-message">Error message</p>
         </div>
-        <button class="form-button" onclick="redirectToPage()">
+        <button class="form-button" onclick="getUserInputActivity()">
           Calculate
         </button>
       </div>
