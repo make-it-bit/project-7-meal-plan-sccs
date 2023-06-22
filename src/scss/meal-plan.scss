@@ -65,14 +65,11 @@
     $form-focus-color 0px 2px 16px 0px;
 }
 
-.radio-selection {
+.radio-selection,
+.checkbox-selection {
   margin-bottom: 15px;
   padding: 10px;
   margin-right: 8px;
-}
-
-.radio-selection input[type='radio'] {
-  // display: none;
 }
 
 .radio-selection span {
@@ -84,8 +81,21 @@
   margin-top: 0.6rem;
 }
 
-input[type='radio']:checked + label {
-  background-color: green;
+.col-12 input[type='radio'],
+.col-12 input[type='checkbox'] {
+  display: none;
+}
+
+.col-12 input[type='radio']:checked + label {
+  background-color: $form-active-color;
+  color: white;
+}
+
+.col-12 input[type='checkbox']:checked + label {
+  box-shadow: $form-checkbox-checked-color 0px 2px 4px 0px,
+    $form-checkbox-checked-color 0px 2px 16px 0px;
+  border-color: $form-checkbox-checked-background-color;
+  background-color: $form-checkbox-checked-background-color;
 }
 
 .flex-direction-column {
