@@ -1,54 +1,79 @@
 const getUserInputHeight = () => {
-  const inputHeight = document.getElementById('input-height').value;
+  return new Promise((resolve, reject) => {
+    const inputHeight = document.getElementById('input-height').value;
 
-  if (!Number(inputHeight)) {
-    showErrorMessage('Height must be a numeric value');
-  } else if (inputHeight < 0) {
-    showErrorMessage('Height must be greater than 0');
-  } else return inputHeight;
+    if (!Number(inputHeight)) {
+      reject('Height must be a numeric value');
+    } else if (inputHeight < 0) {
+      reject('Height must be greater than 0');
+    } else {
+      resolve(inputHeight);
+    }
+  });
 };
 
 const getUserInputWeight = () => {
-  const inputWeight = document.getElementById('input-weight').value;
+  return new Promise((resolve, reject) => {
+    const inputWeight = document.getElementById('input-weight').value;
 
-  if (!Number(inputWeight)) {
-    showErrorMessage('Weight must be a numeric value');
-  } else if (inputWeight < 0) {
-    showErrorMessage('Weight must be greater than 0');
-  } else return inputWeight;
+    if (!Number(inputWeight)) {
+      reject('Weight must be a numeric value');
+    } else if (inputWeight < 0) {
+      reject('Weight must be greater than 0');
+    } else {
+      resolve(inputWeight);
+    }
+  });
 };
 
 const getUserInputAge = () => {
-  const inputAge = document.getElementById('input-age').value;
+  return new Promise((resolve, reject) => {
+    const inputAge = document.getElementById('input-age').value;
 
-  if (!Number(inputAge)) {
-    showErrorMessage('Age must be a numeric value');
-  } else if (inputAge < 0) {
-    showErrorMessage('Age must be greater than 0');
-  } else return inputAge;
+    if (!Number(inputAge)) {
+      reject('Age must be a numeric value');
+    } else if (inputAge < 0) {
+      reject('Age must be greater than 0');
+    } else {
+      resolve(inputAge);
+    }
+  });
 };
 
 const getUserInputGender = () => {
-  return document
-    .getElementById('genders')
-    .querySelector('input[type="radio"]:checked').value;
+  return new Promise((resolve, reject) => {
+    try {
+      const inputGender = document
+        .getElementById('genders')
+        .querySelector('input[type="radio"]:checked').value;
+      resolve(inputGender);
+    } catch (error) {
+      reject('Please specify your gender');
+    }
+  });
 };
 
 const getUserInputActivity = () => {
-  try {
-    const inputAcvityLevel = document
-      .getElementById('activity-levels')
-      .querySelector('input[type="radio"]:checked').value;
-    hideErrorMessage();
-    console.log('inputAcvityLevel: ', inputAcvityLevel);
-    return inputAcvityLevel;
-  } catch (error) {
-    showErrorMessage('Please specify activity level');
-  }
+  return new Promise((resolve, reject) => {
+    try {
+      const inputAcvityLevel = document
+        .getElementById('activity-levels')
+        .querySelector('input[type="radio"]:checked').value;
+      resolve(inputAcvityLevel);
+    } catch (error) {
+      reject('Please specify activity level');
+    }
+  });
 };
 
 const getUserInputIngredients = () => {
-  return document.getElementById('ingredients');
+  return new Promise((resolve, reject) => {
+    const inputIngredients = document.getElementById('ingredients').value;
+    if (inputIngredients) {
+      resolve(inputIngredients);
+    }
+    reject('Please enter at least one valid ingredient');
+  });
 };
 
 const showErrorMessage = (message) => {
@@ -101,31 +126,46 @@ const getRecepies = async () => {
   const APP_KEY = 'a7a5284e0132e033649dbbd050765bf7';
   const URL_BASE = 'https://api.edamam.com/api/recipes/v2?type=public';
 
-  const caloriesAmount = calculateCalories(
-    getUserInputGender(),
-    getUserInputHeight(),
-    getUserInputWeight(),
-    getUserInputAge(),
-    getUserInputActivity()
-  );
-
-  if (caloriesAmount) {
-    const url = `${URL_BASE}&q=${encodeURIComponent(
-      ingredients
-    )}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=Breakfast&calories=${caloriesAmount}`;
-
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      hideErrorMessage();
-      console.log(data);
-      return data;
-    } catch (error) {
-      showErrorMessage(`Could not get data`);
-    }
-  } else {
-    showErrorMessage('Could not calculate calories');
+  try {
+    const height = await getUserInputHeight();
+    const weight = await getUserInputWeight();
+    const age = await getUserInputAge();
+    const gender = await getUserInputGender();
+    const activityLevel = await getUserInputActivity();
+    const ingredients = await getUserInputIngredients();
+    hideErrorMessage();
+  } catch (error) {
+    showErrorMessage(error);
   }
+
+  // const weight = getUserInputWeight();
+  // const age = getUserInputAge();
+  // const activityLevel = getUserInputActivity();
+  // const gender = getUserInputGender();
+
+  // const caloriesAmount = calculateCalories(
+  //   gender,
+  //   height,
+  //   weight,
+  //   age,
+  //   activityLevel
+  // );
+
+  // if (caloriesAmount) {
+  //   const url = `${URL_BASE}&q=${encodeURIComponent(
+  //     ingredients
+  //   )}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=Breakfast&calories=${caloriesAmount}`;
+
+  //   try {
+  //     const response = await fetch(url);
+  //     const data = await response.json();
+  //     hideErrorMessage();
+  //     console.log(data);
+  //     return data;
+  //   } catch (error) {
+  //     showErrorMessage(`Could not get data`);
+  //   }
+  // }
 };
 
 const redirectToPage = () => {
