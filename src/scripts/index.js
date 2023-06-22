@@ -59,4 +59,6 @@ const getRecepies = async (caloriesAmount, ingredients) => {
   const url = `${URL_BASE}&q=${encodeURIComponent(
     ingredients
   )}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=Breakfast&calories=${caloriesAmount}`;
+
+  console.log(url);
 };

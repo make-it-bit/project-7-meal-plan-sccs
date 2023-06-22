@@ -37,19 +37,19 @@
         <h1 class="text-center">Macro Meal Plan Generator</h1>
         <div class="row">
           <div class="col-12 flex-direction-column">
-            <label class="form-label" for="input-height">Height</label>
+            <p class="form-label">Height</p>
             <input type="text" id="input-height" />
           </div>
         </div>
         <div class="row">
           <div class="col-12 flex-direction-column">
-            <label class="form-label" for="input-weight">Weight</label>
+            <p class="form-label">Weight</p>
             <input type="text" id="input-weight" />
           </div>
         </div>
         <div class="row">
           <div class="col-12 flex-direction-column">
-            <label class="form-label" for="input-age">Age</label>
+            <p class="form-label">Age</p>
             <input type="text" id="input-age" />
           </div>
         </div>
@@ -68,8 +68,8 @@
             <label for="gender-female">Female</label>
           </div>
         </div>
-        <div class="row" id="activity-levels">
-          <label class="form-label" for="activity-levels">Activity Level</label>
+        <div class="row">
+          <p class="form-label">Activity level</p>
           <div class="col-12">
             <input
               type="radio"
@@ -116,8 +116,8 @@
             <label for="activity-extremely-active">Extremely Active</label>
           </div>
         </div>
-        <div class="row" id="allergies">
-          <label class="form-label" for="allergies">Allergies</label>
+        <div class="row">
+          <p class="form-label">Allergies</p>
           <div class="col-12">
             <input
               type="checkbox"
@@ -184,7 +184,7 @@
         </div>
         <div class="row">
           <div class="col-12 flex-direction-column">
-            <label class="form-label" for="ingredients">Ingredients</label>
+            <p class="form-label">Ingredients</p>
             <input
               type="text"
               id="ingredients"
@@ -193,7 +193,7 @@
             />
           </div>
         </div>
-        <button onclick="handleUserFormInput()">Calculate</button>
+        <button onclick="getRecepies(2000, 'chicken salad')">Calculate</button>
       </div>
     </div>
     <script src="./src/scripts/index.js"></script>
