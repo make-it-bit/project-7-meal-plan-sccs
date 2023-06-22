@@ -121,7 +121,7 @@ const calculateCalories = (gender, height, weight, age, activityLevel) => {
   }
 };
 
-const getRecepies = async () => {
+const fetchRecepy = async (mealType) => {
   const APP_ID = 'c34ab5d9';
   const APP_KEY = 'a7a5284e0132e033649dbbd050765bf7';
   const URL_BASE = 'https://api.edamam.com/api/recipes/v2?type=public';
@@ -146,14 +146,13 @@ const getRecepies = async () => {
     if (caloriesAmount) {
       const url = `${URL_BASE}&q=${encodeURIComponent(
         ingredients
-      )}&app_id=${APP_ID}&app_key=${APP_KEY}&imageSize=REGULAR&mealType=Breakfast&calories=${caloriesAmount}`;
+      )}&app_id=${APP_ID}&app_key=${APP_KEY}&imageSize=REGULAR&mealType=${mealType}&calories=${caloriesAmount}`;
 
       try {
         const response = await fetch(url);
         const data = await response.json();
-        console.log(data);
         hideErrorMessage();
-        return data;
+        return data['hits'][0];
       } catch (error) {
         showErrorMessage(`Could not get data`);
       }
@@ -161,6 +160,12 @@ const getRecepies = async () => {
   } catch (error) {
     showErrorMessage(error);
   }
+};
+
+const getThreeMealRecepies = async () => {
+  const breakfast = await fetchRecepy('Breakfast');
+  localStorage.setItem('breakfast', JSON.stringify(breakfast));
+  console.log(JSON.parse(localStorage.getItem('breakfast')));
 };
 
 const redirectToPage = () => {

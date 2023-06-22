@@ -38,19 +38,37 @@
         <div class="row">
           <div class="col-12 flex-direction-column">
             <p class="form-label">Height</p>
-            <input type="text" id="input-height" placeholder="Height in cm" />
+            <input
+              type="text"
+              id="input-height"
+              placeholder="Height in cm"
+              value="180"
+            />
+            <!-- DEV ONLY: remove test values -->
           </div>
         </div>
         <div class="row">
           <div class="col-12 flex-direction-column">
             <p class="form-label">Weight</p>
-            <input type="text" id="input-weight" placeholder="Weight in kg" />
+            <input
+              type="text"
+              id="input-weight"
+              placeholder="Weight in kg"
+              value="80"
+            />
+            <!-- DEV ONLY: remove test values -->
           </div>
         </div>
         <div class="row">
           <div class="col-12 flex-direction-column">
             <p class="form-label">Age</p>
-            <input type="text" id="input-age" placeholder="Age in years" />
+            <input
+              type="text"
+              id="input-age"
+              placeholder="Age in years"
+              value="21"
+            />
+            <!-- DEV ONLY: remove test values -->
           </div>
         </div>
         <div class="row flex-direction-column" id="genders">
@@ -215,13 +233,17 @@
               id="ingredients"
               name="ingredients"
               placeholder="vegetables chicken potato"
+              value="chicken salad"
             />
+            <!-- DEV ONLY: remove test values -->
           </div>
         </div>
         <div class="error-container" id="error-container">
           <p id="error-message">Error message</p>
         </div>
-        <button class="form-button" onclick="getRecepies()">Calculate</button>
+        <button class="form-button" onclick="getThreeMealRecepies()">
+          Calculate
+        </button>
       </div>
     </div>
     <script src="./src/scripts/index.js"></script>
