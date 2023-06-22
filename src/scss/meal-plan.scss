@@ -16,16 +16,12 @@
 
 .border-left {
   border-radius: 5px 0 0 5px;
-  border-top: 1px solid $border-color;
-  border-left: 1px solid $border-color;
-  border-bottom: 1px solid $border-color;
+  border: 1px solid $border-color;
 }
 
 .border-right {
   border-radius: 0 5px 5px 0;
-  border-top: 1px solid $border-color;
-  border-right: 1px solid $border-color;
-  border-bottom: 1px solid $border-color;
+  border: 1px solid $border-color;
 }
 
 .col-12,

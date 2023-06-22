@@ -53,20 +53,25 @@
             <input type="text" id="input-age" placeholder="Age in years" />
           </div>
         </div>
-        <div class="row flex-direction-column">
+        <div class="row flex-direction-column" id="genders">
+          <p class="form-label">Gender</p>
           <div class="col-12 flex-direction-row text-center">
-            <div class="col-6 border-left">
+            <div class="col-6 flex-direction-column">
               <input type="radio" id="gender-male" name="gender" value="male" />
-              <label for="gender-male">Male</label>
+              <label for="gender-male" class="radio-selection border-left">
+                <span>Male</span>
+              </label>
             </div>
-            <div class="col-6 border-right">
+            <div class="col-6 flex-direction-column">
               <input
                 type="radio"
                 id="gender-female"
                 name="gender"
                 value="female"
               />
-              <label for="gender-female">Female</label>
+              <label for="gender-female" class="radio-selection border-right">
+                <span>Female</span>
+              </label>
             </div>
           </div>
         </div>
@@ -216,7 +221,7 @@
         <div class="error-container" id="error-container">
           <p id="error-message">Error message</p>
         </div>
-        <button class="form-button" onclick="getUserInputActivity()">
+        <button class="form-button" onclick="getUserInputGender()">
           Calculate
         </button>
       </div>

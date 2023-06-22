@@ -1,16 +1,3 @@
-const handleUserFormInput = () => {
-  const inputHeight = document.getElementById('input-height').value;
-  const inputWeight = document.getElementById('input-weight').value;
-  const inputAge = document.getElementById('input-age').value;
-  const inputGender = document
-    .getElementById('genders')
-    .querySelector('input[type="radio"]:checked').value;
-  const inputAcvity = document
-    .getElementById('activity-levels')
-    .querySelector('input[type="radio"]:checked').value;
-  const ingredients = document.getElementById('ingredients');
-};
-
 const getUserInputHeight = () => {
   const inputHeight = document.getElementById('input-height').value;
 
@@ -114,15 +101,13 @@ const getRecepies = async () => {
   const APP_KEY = 'a7a5284e0132e033649dbbd050765bf7';
   const URL_BASE = 'https://api.edamam.com/api/recipes/v2?type=public';
 
-  // const caloriesAmount = calculateCalories(
-  //   getUserInputGender(),
-  //   getUserInputHeight(),
-  //   getUserInputWeight(),
-  //   getUserInputAge(),
-  //   getUserInputActivity()
-  // );
-  caloriesAmount = 2000;
-  const ingredients = 'chicken salad potato';
+  const caloriesAmount = calculateCalories(
+    getUserInputGender(),
+    getUserInputHeight(),
+    getUserInputWeight(),
+    getUserInputAge(),
+    getUserInputActivity()
+  );
 
   if (caloriesAmount) {
     const url = `${URL_BASE}&q=${encodeURIComponent(
@@ -138,6 +123,8 @@ const getRecepies = async () => {
     } catch (error) {
       showErrorMessage(`Could not get data`);
     }
+  } else {
+    showErrorMessage('Could not calculate calories');
   }
 };
 
