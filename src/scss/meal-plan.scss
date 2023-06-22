@@ -3,23 +3,45 @@
 @import './fonts.scss';
 @import './main.scss';
 
-.row-border {
-  border: solid 1px silver;
+.container {
+  border: solid 1px $form-active-color;
+  border-radius: 10px;
+  padding: 32px;
+}
+
+.border-full {
+  border: solid 1px $border-color;
   border-radius: 5px;
+}
+
+.border-left {
+  border-radius: 5px 0 0 5px;
+  border-top: 1px solid $border-color;
+  border-left: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+}
+
+.border-right {
+  border-radius: 0 5px 5px 0;
+  border-top: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
 }
 
 .col-12,
 .col-6 {
   font-family: $ubuntu-font, Arial, Helvetica, sans-serif;
-  padding: 5px;
 }
 
 .col-12 {
   margin-bottom: 10px;
+  padding: 5px;
 }
 
 .col-6 {
   font-size: 1.4rem;
+  height: 32px;
+  padding-top: 4px;
 }
 
 .col-12 input[type='text'] {
@@ -29,9 +51,23 @@
   border: solid 1px $border-color;
 }
 
+.col-12 input[type='text']:focus,
+.col-12 input[type='text']:hover {
+  outline: none;
+  border: solid 1px $form-active-color;
+  box-shadow: $form-focus-color 0px 2px 4px 0px,
+    $form-focus-color 0px 2px 16px 0px;
+}
+
 .flex-direction-column {
   display: flex;
   flex-direction: column;
+}
+
+.flex-direction-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .form-label {
@@ -42,13 +78,28 @@
 }
 
 .form-input-gender:hover {
-  background-color: $form-hover-color;
+  background-color: $form-active-color;
   color: white;
 }
 
 .container h1 {
   font-family: $ubuntu-font, Arial, Helvetica, sans-serif;
   font-size: 2rem;
+}
+
+.form-button {
+  background-color: $form-active-color;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.form-button:hover {
+  background-color: $form-hover-color;
 }
 
 .error-container {
@@ -58,4 +109,22 @@
   display: none;
   margin-top: 5px;
   margin-bottom: 10px;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 60vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 80vh;
+  }
+}
+
+@media (max-width: 512px) {
+  .container {
+    padding: 16px;
+  }
 }

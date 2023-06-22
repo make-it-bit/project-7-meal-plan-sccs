@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index</title>
-    <link href="./dist/main.css" rel="stylesheet" type="text/css" />
-    <link href="./dist/meal_plan.css" rel="stylesheet" type="text/css" />
     <link
       href="./node_modules/bootstrap/dist/css/bootstrap-grid.css"
       rel="stylesheet"
@@ -26,6 +24,8 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link href="./dist/main.css" rel="stylesheet" type="text/css" />
+    <link href="./dist/meal_plan.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <div class="topnav">
@@ -38,39 +38,41 @@
         <div class="row">
           <div class="col-12 flex-direction-column">
             <p class="form-label">Height</p>
-            <input type="text" id="input-height" />
+            <input type="text" id="input-height" placeholder="Height in cm" />
           </div>
         </div>
         <div class="row">
           <div class="col-12 flex-direction-column">
             <p class="form-label">Weight</p>
-            <input type="text" id="input-weight" />
+            <input type="text" id="input-weight" placeholder="Weight in kg" />
           </div>
         </div>
         <div class="row">
           <div class="col-12 flex-direction-column">
             <p class="form-label">Age</p>
-            <input type="text" id="input-age" />
+            <input type="text" id="input-age" placeholder="Age in years" />
           </div>
         </div>
-        <div class="row text-center row-border" id="genders">
-          <div class="col-6 form-input-gender">
-            <input type="radio" id="gender-male" name="gender" value="male" />
-            <label for="gender-male">Male</label>
-          </div>
-          <div class="col-6 form-input-gender">
-            <input
-              type="radio"
-              id="gender-female"
-              name="gender"
-              value="female"
-            />
-            <label for="gender-female">Female</label>
+        <div class="row flex-direction-column">
+          <div class="col-12 flex-direction-row text-center">
+            <div class="col-6 form-input-gender border-left">
+              <input type="radio" id="gender-male" name="gender" value="male" />
+              <label for="gender-male">Male</label>
+            </div>
+            <div class="col-6 form-input-gender border-right">
+              <input
+                type="radio"
+                id="gender-female"
+                name="gender"
+                value="female"
+              />
+              <label for="gender-female">Female</label>
+            </div>
           </div>
         </div>
         <div class="row">
           <p class="form-label">Activity level</p>
-          <div class="col-12">
+          <div class="col-12 border-full">
             <input
               type="radio"
               id="activity-sedentary"
@@ -79,7 +81,7 @@
             />
             <label for="activity-sedentary">Sedentary</label>
           </div>
-          <div class="col-12">
+          <div class="col-12 border-full">
             <input
               type="radio"
               id="activity-lighty-active"
@@ -88,7 +90,7 @@
             />
             <label for="activity-lighty-active">Lightly Active</label>
           </div>
-          <div class="col-12">
+          <div class="col-12 border-full">
             <input
               type="radio"
               id="activity-active"
@@ -97,7 +99,7 @@
             />
             <label for="activity-active">Active</label>
           </div>
-          <div class="col-12">
+          <div class="col-12 border-full">
             <input
               type="radio"
               id="activity-very-active"
@@ -106,7 +108,7 @@
             />
             <label for="activity-very-active">Very Active</label>
           </div>
-          <div class="col-12">
+          <div class="col-12 border-full">
             <input
               type="radio"
               id="activity-extremely-active"
@@ -118,7 +120,7 @@
         </div>
         <div class="row">
           <p class="form-label">Allergies</p>
-          <div class="col-12">
+          <div class="col-12 border-full">
             <input
               type="checkbox"
               id="peanut-free"
@@ -127,7 +129,7 @@
             />
             <label for="peanut-free">Peanut-free</label>
           </div>
-          <div class="col-12">
+          <div class="col-12 border-full">
             <input
               type="checkbox"
               id="tree-nut-free"
@@ -136,7 +138,7 @@
             />
             <label for="tree-nut-free">Tree-nut-free</label>
           </div>
-          <div class="col-12">
+          <div class="col-12 border-full">
             <input
               type="checkbox"
               id="milk-free"
@@ -145,7 +147,7 @@
             />
             <label for="milk-free">Milk-free</label>
           </div>
-          <div class="col-12">
+          <div class="col-12 border-full">
             <input
               type="checkbox"
               id="egg-free"
@@ -154,7 +156,7 @@
             />
             <label for="egg-free">Egg-free</label>
           </div>
-          <div class="col-12">
+          <div class="col-12 border-full">
             <input
               type="checkbox"
               id="wheat-free"
@@ -163,7 +165,7 @@
             />
             <label for="wheat-free">Wheat-free</label>
           </div>
-          <div class="col-12">
+          <div class="col-12 border-full">
             <input
               type="checkbox"
               id="soy-free"
@@ -172,7 +174,7 @@
             />
             <label for="soy-free">Soy-free</label>
           </div>
-          <div class="col-12">
+          <div class="col-12 border-full">
             <input
               type="checkbox"
               id="fish-free"
@@ -196,7 +198,9 @@
         <div class="error-container" id="error-container">
           <p id="error-message">Error message</p>
         </div>
-        <button onclick="getRecepies()">Calculate</button>
+        <button class="form-button" onclick="redirectToPage()">
+          Calculate
+        </button>
       </div>
     </div>
     <script src="./src/scripts/index.js"></script>

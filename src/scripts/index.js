@@ -133,3 +133,7 @@ const getRecepies = async () => {
     }
   }
 };
+
+const redirectToPage = () => {
+  location.href = '/meal-plan.html';
+};
