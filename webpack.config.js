@@ -8,6 +8,7 @@ module.exports = {
   entry: {
     reset: './scss/reset.scss',
     main: './scss/main.scss',
+    index: './scss/index.scss',
     meal_plan: './scss/meal-plan.scss',
   },
   module: {

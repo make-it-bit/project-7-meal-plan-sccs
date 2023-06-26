@@ -1,0 +1,170 @@
+@import './reset.scss';
+@import './colors.scss';
+@import './fonts.scss';
+@import './main.scss';
+
+.container {
+  border: solid 1px $form-active-color;
+  border-radius: 10px;
+  padding: 32px;
+}
+
+.border-full {
+  border: solid 1px $border-color;
+  border-radius: 5px;
+}
+
+.border-left {
+  border-radius: 5px 0 0 5px;
+  border: 1px solid $border-color;
+}
+
+.border-right {
+  border-radius: 0 5px 5px 0;
+  border: 1px solid $border-color;
+}
+
+.col-12,
+.col-6 {
+  font-family: $ubuntu-font, Arial, Helvetica, sans-serif;
+}
+
+.col-12 {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.col-6 {
+  font-size: 1.4rem;
+  height: 32px;
+  padding-top: 4px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.col-12 label {
+  margin-left: 10px;
+}
+
+.col-12 input[type='text'] {
+  border-radius: 6px;
+  height: 32px;
+  padding-left: 10px;
+  border: solid 1px $border-color;
+}
+
+.col-12 input[type='text']:focus,
+.col-12 input[type='text']:hover {
+  outline: none;
+  border: solid 1px $form-active-color;
+  box-shadow: $form-focus-color 0px 2px 4px 0px,
+    $form-focus-color 0px 2px 16px 0px;
+}
+
+.radio-selection,
+.checkbox-selection {
+  margin-bottom: 15px;
+  padding: 10px;
+  margin-right: 8px;
+}
+
+.radio-selection span {
+  font-weight: bold;
+}
+
+.radio-selection p {
+  margin: 0;
+  margin-top: 0.6rem;
+}
+
+.col-12 input[type='radio'],
+.col-12 input[type='checkbox'] {
+  display: none;
+}
+
+.col-12 input[type='radio']:checked + label {
+  background-color: $form-active-color;
+  color: white;
+}
+
+.col-12 input[type='checkbox']:checked + label {
+  box-shadow: $form-checkbox-checked-color 0px 2px 4px 0px,
+    $form-checkbox-checked-color 0px 2px 16px 0px;
+  border-color: $form-checkbox-checked-background-color;
+  background-color: $form-checkbox-checked-background-color;
+}
+
+.flex-direction-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-direction-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.form-label {
+  font-family: $ubuntu-font, Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.container h1 {
+  font-family: $ubuntu-font, Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+}
+
+.container h2 {
+  font-family: $ubuntu-font, Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+}
+
+.container img {
+  width: 256px;
+  height: 256px;
+}
+
+.form-button {
+  background-color: $form-active-color;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.form-button:hover {
+  background-color: $form-hover-color;
+}
+
+.error-container {
+  font-family: $ubuntu-font, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: red;
+  display: none;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 60vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 80vh;
+  }
+}
+
+@media (max-width: 512px) {
+  .container {
+    padding: 16px;
+  }
+}

@@ -6,11 +6,45 @@
     <title>Meal plan</title>
     <link href="./dist/main.css" rel="stylesheet" type="text/css" />
     <link href="./dist/reset.css" rel="stylesheet" type="text/css" />
+    <link
+      href="./node_modules/bootstrap/dist/css/bootstrap-grid.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="./node_modules/bootstrap/dist/css/bootstrap-grid.rtl.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="./node_modules/bootstrap/dist/css/bootstrap-grid.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="./node_modules/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="./dist/main.css" rel="stylesheet" type="text/css" />
+    <link href="./dist/meal_plan.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <div class="topnav">
       <a href="./index.html">Home</a>
       <a class="active" href="./meal-plan.html">Meal plan</a>
     </div>
+    <div class="page-content">
+      <h1 class="text-center">Your personal meal plan</h1>
+      <h2>Energy content: 2000 calories</h2>
+      <p class="form-label">Breakfast</p>
+      <img
+        src="http://edamam-product-images.s3.amazonaws.com/web-img/125/125c1082ec32b66fbf2d950894b6dd57-m.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjENj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQDGZkEF5tS3IKP9x%2FcoNzTRzaKvpTnxG72Ow0AaWd1RUQIhAKml%2BD9hGcXzXkILSb0cBLXC4V5RE%2Fw2oGMgIZezf85CKrkFCEEQABoMMTg3MDE3MTUwOTg2Igxg6wlCTJIWIWo5RGcqlgX0mq%2FVrMJgLd%2FmH2isVMfrFe4SQuOUu9qNNuY%2Br6OKfvhqezMB258XoOzUSc2JLfF6xflPAZCH2NDRAQISWjURwbPxlihz6Ym875WmByj8dfkMEZ2WFlbFQbV6SYk2k%2BJXHLmxfVg1qkryqTZ1T4TzFX%2ByJnN3xhdPIMBXb5iDUQ1LsSr3BtNxwfaCbmcpzURGy78rWB%2FLHY8Ab1h8ZftUZ%2BD5rk%2BoppkW01aeq2dr18ebIAlQfG1QyznSRWOSiLVJiPSnfGLxFZdR1vBLJjgH9HPXgljqq33xWnvk1y7lZrfT00E0Xx9jcddQ4cohjBMu2JZxCBa3s9wgFFDg62%2BX1p3NspiNXARRBQBhUTDdg7my8pe5dPDenIcIFRBbGShqtnjVQaz7CMsDUnNpKWlqt9I43%2FOndvpd%2Bf6So7doH97iBhM%2Fu92OQJyDbrWoQKfy5hWagGHWf4AzFLR%2B%2BT3OOdUG%2BwRk2f8CsU5PCedAnW%2FzWE0nt3iIIDMiwwRnbvK2oumHhU6LT4F%2BUSTR1EGdGBz%2B3rhVkWNJX6cBPebzPaRgKT%2F43m05hQDcrdcALkF%2BwnnaT9pKqR5LAFKnDSd5c0BwDYTPjyZ1nDn2oA50RfwN7ngitUlyO4r9yQLU2mfSk5qq5WOGu9VHJyMG5GGws3z9MPgtLhoCqA9fwvytXumi6jwkOBD7soG3tFvqf8Q1YpOMdEzYR%2FfTWw9oFJoiRmzOSsx3Ibcaz1Sbho4k3DzNffB7Cje7PHPkyGl6lyENmsp4DFELg0tBYv66HMdnF4xxFX8gbeCSop50j32Xai%2BsyzgvTNDt7BcBh8uUQcouZ5pfey5eD4uWmFWxGz4SKFvgRH6TREaw4b3e8JbFMwpDyM6UOTDC%2BeSkBjqwAeYISGC9jtbjHNGinntwbqGN6RMDKBpFu8Aj7o1640YwtqH13KO%2BFlSQ%2FtjAM%2FuEFVq0PGFV1ljVXCqI0onIlBzaicVv5N%2F6JoaDlqfxbbba87mi2bv2H57SrQIrLp49NCeKrdV1tumZ2aOmn%2B3l1ur6%2F0hGTvhoMBU17IprtCWYqdw8oozO3eHhQxnAAhQqTODxuZFb6g%2BReG1Rh%2BBLzq5QBYqIeGHSi993N792hljH&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230626T075439Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFFIPAXUFT%2F20230626%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=cc3f8ab48fc731bd8d094da545ef3362ed4c8df12e99d8e4600ad9f41a5e13f7"
+      />
+    </div>
+    <button onclick="loadMealTypeFromLocalStorage('breakfast')">
+      get meal
+    </button>
+    <script src="./src/scripts/meal-plan.js"></script>
   </body>
 </html>

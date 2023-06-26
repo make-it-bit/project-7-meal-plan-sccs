@@ -164,8 +164,9 @@ const fetchRecepy = async (mealType) => {
 
 const getThreeMealRecepies = async () => {
   const breakfast = await fetchRecepy('Breakfast');
-  localStorage.setItem('breakfast', JSON.stringify(breakfast));
-  console.log(JSON.parse(localStorage.getItem('breakfast')));
+  if (breakfast) {
+    localStorage.setItem('breakfast', JSON.stringify(breakfast));
+  }
 };
 
 const redirectToPage = () => {
