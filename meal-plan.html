@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meal plan</title>
-    <link href="./dist/main.css" rel="stylesheet" type="text/css" />
-    <link href="./dist/reset.css" rel="stylesheet" type="text/css" />
     <link
       href="./node_modules/bootstrap/dist/css/bootstrap-grid.css"
       rel="stylesheet"
@@ -35,12 +33,35 @@
       <a class="active" href="./meal-plan.html">Meal plan</a>
     </div>
     <div class="page-content">
-      <h1 class="text-center">Your personal meal plan</h1>
-      <h2>Energy content: 2000 calories</h2>
-      <p class="form-label">Breakfast</p>
-      <img
-        src="http://edamam-product-images.s3.amazonaws.com/web-img/125/125c1082ec32b66fbf2d950894b6dd57-m.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjENj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQDGZkEF5tS3IKP9x%2FcoNzTRzaKvpTnxG72Ow0AaWd1RUQIhAKml%2BD9hGcXzXkILSb0cBLXC4V5RE%2Fw2oGMgIZezf85CKrkFCEEQABoMMTg3MDE3MTUwOTg2Igxg6wlCTJIWIWo5RGcqlgX0mq%2FVrMJgLd%2FmH2isVMfrFe4SQuOUu9qNNuY%2Br6OKfvhqezMB258XoOzUSc2JLfF6xflPAZCH2NDRAQISWjURwbPxlihz6Ym875WmByj8dfkMEZ2WFlbFQbV6SYk2k%2BJXHLmxfVg1qkryqTZ1T4TzFX%2ByJnN3xhdPIMBXb5iDUQ1LsSr3BtNxwfaCbmcpzURGy78rWB%2FLHY8Ab1h8ZftUZ%2BD5rk%2BoppkW01aeq2dr18ebIAlQfG1QyznSRWOSiLVJiPSnfGLxFZdR1vBLJjgH9HPXgljqq33xWnvk1y7lZrfT00E0Xx9jcddQ4cohjBMu2JZxCBa3s9wgFFDg62%2BX1p3NspiNXARRBQBhUTDdg7my8pe5dPDenIcIFRBbGShqtnjVQaz7CMsDUnNpKWlqt9I43%2FOndvpd%2Bf6So7doH97iBhM%2Fu92OQJyDbrWoQKfy5hWagGHWf4AzFLR%2B%2BT3OOdUG%2BwRk2f8CsU5PCedAnW%2FzWE0nt3iIIDMiwwRnbvK2oumHhU6LT4F%2BUSTR1EGdGBz%2B3rhVkWNJX6cBPebzPaRgKT%2F43m05hQDcrdcALkF%2BwnnaT9pKqR5LAFKnDSd5c0BwDYTPjyZ1nDn2oA50RfwN7ngitUlyO4r9yQLU2mfSk5qq5WOGu9VHJyMG5GGws3z9MPgtLhoCqA9fwvytXumi6jwkOBD7soG3tFvqf8Q1YpOMdEzYR%2FfTWw9oFJoiRmzOSsx3Ibcaz1Sbho4k3DzNffB7Cje7PHPkyGl6lyENmsp4DFELg0tBYv66HMdnF4xxFX8gbeCSop50j32Xai%2BsyzgvTNDt7BcBh8uUQcouZ5pfey5eD4uWmFWxGz4SKFvgRH6TREaw4b3e8JbFMwpDyM6UOTDC%2BeSkBjqwAeYISGC9jtbjHNGinntwbqGN6RMDKBpFu8Aj7o1640YwtqH13KO%2BFlSQ%2FtjAM%2FuEFVq0PGFV1ljVXCqI0onIlBzaicVv5N%2F6JoaDlqfxbbba87mi2bv2H57SrQIrLp49NCeKrdV1tumZ2aOmn%2B3l1ur6%2F0hGTvhoMBU17IprtCWYqdw8oozO3eHhQxnAAhQqTODxuZFb6g%2BReG1Rh%2BBLzq5QBYqIeGHSi993N792hljH&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230626T075439Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFFIPAXUFT%2F20230626%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=cc3f8ab48fc731bd8d094da545ef3362ed4c8df12e99d8e4600ad9f41a5e13f7"
-      />
+      <div class="meal-plan-container">
+        <h1 class="text-center">Your personal meal plan</h1>
+        <span class="meal-plan-top-label">Breakfast</span>
+        <div class="meal-container">
+          <div class="dish-name-container">
+            <span>Champion Chicken Pockets</span>
+          </div>
+          <div class="meal-plan-content">
+            <div class="meal-plan-container-left">
+              <span>Calories: 1226</span>
+              <span>Cuisine type: American</span>
+            </div>
+            <div class="meal-plan-container-right">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Molestias, culpa? Illum architecto et velit sit? Quas ipsa iste
+              fugiat dolorem?
+            </div>
+            <div class="meal-plan-img-container">
+              <img
+                src="https://edamam-product-images.s3.amazonaws.com/web-img/125/125c1082ec32b66fbf2d950894b6dd57-m.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjENn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQCX9ziHdxob83vZaA3OgFISDzqTGDRCV2Ph4jDtrlewfAIhAM0IpyS9lK2hjt01gwv86R5KZxveY6%2BCSHlaegBDuAVfKrkFCEEQABoMMTg3MDE3MTUwOTg2Igz4L0ZeYQtj4biiQRYqlgW4528JIEdQ3%2Bx%2Bju8%2FOpQ9fIJX3K4EUQoB5whZSxTkxI2wokj%2F1oj30ifTwvWaXi%2Bubwbpy3w0Kcrd86sa87CVwcb66XDNXkrqZWc9XMQ7gFEEvHPOfHlUEhlgPaeuSecn2dQ4tAoWqLLS4Ok5nFtdQk%2BrqCNRiinzgSkwQJZDBDKKdXxeAJ%2Fy945utai%2FOi68FL1aGH0PXkWqW5s1BRNx9Sjhqh74eHY8MEuotPRnxdy8nfyDvsD%2BOzk8pk4NDWiWl%2BBroI6g3g%2BkveKdJV3C0rIINA8D4AkvXyZjiT%2BMZBVB7n%2FC%2BWvPRZrzimAOXY3d1Xy6Mq3Utqy%2F07UjItmNLfAJ9FEyByR8llu7APjbaI%2F80kVMqG65loReQ3PM5lfoOORFTBVedYh7uVsxU0K%2F9Su%2FgBBmV%2B2I2Cgt7NcwIYsWjmucYdusqAc4GXJv7hfPvZuIOZNIZ%2BaKKToSGCd9ZlXw0VDJdPX0zy5WKxcfring91bqvcnZSxR2hE3nVIFCsueBe9WZi0tpwGxFVbDKr6DM4Bwx1SfeJzuyK2jQI%2FEbiAKY5WFYrLUb616NKKvvtrxIxB%2BONO5oGcM0XEJF51pQnxdB58eTUadB9e0Xxq%2Fc1T8L5g9UKgbamvEzKzfeTsesmm4fTieq3GL1swsSHQ8ld0Q24YNhF3b8X61hoHI3W6zofi8FpimxjVbASF6z5KoCpKOmEvdznG4vINhjoCjgRijKErwVLYjx%2FFU2m6vEVNKfBAoF5SqdUVylx7Bs26gEv9ZvDGH4AG4ifwXgNS%2FgcBfol9fGQ2BM3DDxq%2B01Dg%2BpQTAadcuEX%2FQXtTs%2BrKSIVAnw0a9zhhMcW%2BPYSg%2BLnUn8XudRZ9Q0psZq%2BCIaetFs9DCCk%2BWkBjqwAXrjTNVhi4w5y66YLzFgbeGWXwX9L8qQ0Xf3p6CCnFdJuinwgGPVb7jlMxRE23Z1ETTBCcG2mFka3KwX14%2Bf084KlIu788quKl%2BfUwufK%2BjhaNTNpNqhmXcAIPO2B4R30EDC4Uk2Peidkv7qteT99xWRUrNbUfjN4DLTChH4joVeCJalyx8WzQUNKGjbfZm1%2BC7OvIxpEAHt94Ta7oOreW1CFdMkkTnYrKBZboAL43sZ&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230626T100727Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3599&X-Amz-Credential=ASIASXCYXIIFEAXF47TR%2F20230626%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=dd3ad75a44ca7c3f5ec5c8d61a2f1b3b49fb7d5005dec8cc2bf60bec249ebf1f"
+              />
+            </div>
+          </div>
+          <div class="meal-digest-container">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
+            praesentium.
+          </div>
+        </div>
+      </div>
     </div>
     <button onclick="loadMealTypeFromLocalStorage('breakfast')">
       get meal

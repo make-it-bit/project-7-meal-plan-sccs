@@ -1,0 +1,108 @@
+@import './colors.scss';
+@import './fonts.scss';
+
+.page-content h1,
+.page-content h2 {
+  font-family: $ubuntu-font, Arial, Helvetica, sans-serif;
+}
+
+.page-content {
+  background-color: green;
+}
+
+.meal-plan-container {
+  display: flex;
+  flex-direction: column;
+  background-color: orange;
+  border: solid 1px $form-active-color;
+  border-radius: 10px;
+  padding: 32px;
+}
+
+.meal-container {
+  display: flex;
+  flex-direction: column;
+  background-color: pink;
+  border: solid 1px $border-color;
+  border-radius: 10px;
+  padding: 12px;
+  font-family: $ubuntu-font, Arial, Helvetica, sans-serif;
+  gap: 1rem;
+}
+
+.meal-plan-top-label {
+  font-family: $ubuntu-font, Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+  padding-left: 5px;
+}
+
+.meal-plan-content {
+  background-color: green;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.meal-plan-container-left {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(200, 200, 220);
+}
+
+.dish-name-container {
+  border-bottom: solid 1px $border-color;
+  font-size: 1.3rem;
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 10px;
+  padding-left: 5px;
+  padding-bottom: 2px;
+}
+
+.meal-plan-container-right {
+  display: flex;
+  flex-direction: column;
+  background-color: purple;
+}
+
+.meal-plan-img-container {
+  background-color: cyan;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.meal-plan-img-container img {
+  border-radius: 10px;
+  width: 128px;
+  height: 128px;
+}
+
+.meal-digest-container {
+  background-color: salmon;
+}
+
+@media (min-width: 769px) {
+  .meal-plan-container {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .meal-plan-container {
+    width: 100vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .meal-plan-container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 512px) {
+  .meal-plan-container {
+    width: 90%;
+    padding: 16px;
+  }
+}

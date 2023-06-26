@@ -1,7 +1,5 @@
-@import './reset.scss';
 @import './colors.scss';
 @import './fonts.scss';
-@import './main.scss';
 
 .container {
   border: solid 1px $form-active-color;
@@ -120,11 +118,6 @@
 .container h2 {
   font-family: $ubuntu-font, Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
-}
-
-.container img {
-  width: 256px;
-  height: 256px;
 }
 
 .form-button {
