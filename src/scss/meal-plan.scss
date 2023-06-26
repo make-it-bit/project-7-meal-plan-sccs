@@ -6,14 +6,9 @@
   font-family: $ubuntu-font, Arial, Helvetica, sans-serif;
 }
 
-.page-content {
-  background-color: green;
-}
-
 .meal-plan-container {
   display: flex;
   flex-direction: column;
-  background-color: orange;
   border: solid 1px $form-active-color;
   border-radius: 10px;
   padding: 32px;
@@ -22,12 +17,12 @@
 .meal-container {
   display: flex;
   flex-direction: column;
-  background-color: pink;
   border: solid 1px $border-color;
   border-radius: 10px;
   padding: 12px;
   font-family: $ubuntu-font, Arial, Helvetica, sans-serif;
   gap: 1rem;
+  margin-bottom: 35px;
 }
 
 .meal-plan-top-label {
@@ -35,19 +30,24 @@
   font-size: 1.6rem;
   margin-bottom: 5px;
   padding-left: 5px;
+  color: $secondary-text-color;
 }
 
 .meal-plan-content {
-  background-color: green;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .meal-plan-container-left {
   display: flex;
-  flex-direction: column;
-  background-color: rgb(200, 200, 220);
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: rgb(226, 226, 226);
+  border-radius: 5px;
+  gap: 0.2rem;
+  padding: 5px;
 }
 
 .dish-name-container {
@@ -62,11 +62,24 @@
 .meal-plan-container-right {
   display: flex;
   flex-direction: column;
-  background-color: purple;
+  padding: 5px;
+  padding-left: 8px;
+  flex: 1;
+  gap: 0.4rem;
+}
+
+.meal-plan-container-right span {
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 5px;
+  padding-left: 3px;
+}
+
+.meal-plan-container-right .ingredients-label {
+  font-size: 1.2rem;
+  border: none;
 }
 
 .meal-plan-img-container {
-  background-color: cyan;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,14 +92,13 @@
 }
 
 .meal-digest-container {
-  background-color: salmon;
+  // TODO add table styling.
 }
 
 .accordion {
-  background-color: teal;
-  color: black;
+  background-color: $highlight-color;
   cursor: pointer;
-  padding: 18px;
+  padding: 8px;
   width: 100%;
   border: none;
   text-align: left;
@@ -94,20 +106,27 @@
   font-size: 15px;
   transition: 0.4s;
   margin: auto;
+  border-radius: 5px;
 }
 
-.active,
+.active {
+  background-color: $accordion-active-color;
+  border-radius: 5px 5px 0 0;
+}
+
 .accordion:hover {
-  background-color: beige;
+  background-color: $form-hover-color;
+  color: white;
 }
 
 .panel {
-  padding: 0 18px;
+  padding: 16px;
   display: none;
-  background-color: palegreen;
+  background-color: $highlight-color;
   overflow: hidden;
   margin: auto;
   margin-bottom: 16px;
+  border-radius: 0 0 5px 5px;
 }
 
 @media (min-width: 769px) {
