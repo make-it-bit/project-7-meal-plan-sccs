@@ -55,9 +55,21 @@ const loadMealTypeFromLocalStorage = (mealType) => {
     const digest = Object.assign(document.createElement('div'), {
       className: 'meal-digest-container',
     });
+    digest.appendChild(
+      Object.assign(document.createElement('button'), {
+        className: 'accordion',
+        innerHTML: 'Meal digest',
+      })
+    );
+    const panel = Object.assign(document.createElement('div'), {
+      className: 'panel',
+    });
     for (let elem of mealJson['recipe']['digest']) {
-      digest.innerHTML += `<span>${elem['label']}: ${elem['total']}mg</span>`;
+      panel.innerHTML += `<span>${elem['label']}: ${elem['total']}mg</span>`;
     }
+    digest.appendChild(panel);
     mealContainer.appendChild(digest);
+
+    handleAccordions();
   }
 };
