@@ -163,8 +163,29 @@
 }
 
 @media (max-width: 512px) {
+  .meal-container {
+    padding: 6px;
+  }
+
   .meal-plan-container {
     width: 90%;
     padding: 16px;
+  }
+
+  .meal-plan-content {
+    flex-direction: column;
+  }
+
+  .meal-plan-img-container {
+    align-items: center;
+  }
+
+  .meal-plan-img-container img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .meal-plan-container-right {
+    padding: 0;
   }
 }
