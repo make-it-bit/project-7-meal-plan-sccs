@@ -145,6 +145,8 @@ const fetchRecepy = async (mealType, caloriesPerMeal, ingredients) => {
 };
 
 const getThreeMealRecepies = async () => {
+  addLoader();
+
   // Meal calories distribtutions.
   const BREAKFAST_CALORIES_COEFFICENT = 0.3;
   const LUNCH_CALORIES_COEFFICENT = 0.4;
@@ -194,9 +196,24 @@ const getThreeMealRecepies = async () => {
       if (dinner) {
         localStorage.setItem('dinner', JSON.stringify(dinner));
       }
+      removeLoader();
       location.href = '/meal-plan.html';
     }
   } catch (error) {
     showErrorMessage(error);
   }
+};
+
+const addLoader = () => {
+  document.getElementById('container').appendChild(
+    Object.assign(document.createElement('div'), {
+      className: 'loader',
+    })
+  );
+};
+
+const removeLoader = () => {
+  document
+    .getElementById('container')
+    .removeChild(document.querySelector('.loader'));
 };
