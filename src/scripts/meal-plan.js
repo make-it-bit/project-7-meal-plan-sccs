@@ -1,9 +1,15 @@
+window.onload = () => {
+  loadMealTypeFromLocalStorage('breakfast');
+  loadMealTypeFromLocalStorage('lunch');
+  loadMealTypeFromLocalStorage('dinner');
+  handleAccordions();
+};
+
 const loadMealTypeFromLocalStorage = (mealType) => {
   const item = localStorage.getItem(mealType);
 
   if (item) {
     const mealJson = JSON.parse(item);
-    console.log('mealJson: ', mealJson);
 
     const mealPlanContainer = document.getElementById('meal-plan-container');
     mealPlanContainer.appendChild(
@@ -28,7 +34,11 @@ const loadMealTypeFromLocalStorage = (mealType) => {
     mealContainer.appendChild(
       Object.assign(document.createElement('div'), {
         className: 'meal-plan-container-left',
-        innerHTML: `<span>Calories: ${mealJson['recipe']['calories']}</span><span>Cuisine type: ${mealJson['recipe']['cuisineType']}</span>`,
+        innerHTML: `<span>Calories: ${Math.round(
+          mealJson['recipe']['calories']
+        )}</span><span>Cuisine type: ${
+          mealJson['recipe']['cuisineType']
+        }</span>`,
       })
     );
 
@@ -70,23 +80,24 @@ const loadMealTypeFromLocalStorage = (mealType) => {
 
     const digestTable = document.createElement('table');
     const headerRow = digestTable.insertRow();
+    headerRow.className;
     const labelHeader = headerRow.insertCell();
+    labelHeader.className = 'header-cell';
     labelHeader.innerHTML = 'Label';
     const amountHeader = headerRow.insertCell();
-    amountHeader.innerHTML = 'Amount';
+    amountHeader.className = 'header-cell';
+    amountHeader.innerHTML = 'Amount (mg)';
 
     for (let elem of mealJson['recipe']['digest']) {
       const row = digestTable.insertRow();
       const labelCell = row.insertCell();
       labelCell.innerHTML = elem['label'];
       const amountCell = row.insertCell();
-      amountCell.innerHTML = elem['total'];
+      amountCell.innerHTML = elem['total'].toFixed(1);
     }
 
     panel.appendChild(digestTable);
     digest.appendChild(panel);
     mealContainer.appendChild(digest);
-
-    handleAccordions();
   }
 };

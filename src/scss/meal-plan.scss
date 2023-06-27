@@ -59,6 +59,16 @@
   padding-bottom: 2px;
 }
 
+.energy-content-label {
+  font-size: 1.2rem;
+  font-weight: normal;
+  border-bottom: solid 1px $border-color;
+  padding: 5px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .meal-plan-container-right {
   display: flex;
   flex-direction: column;
@@ -91,8 +101,13 @@
   height: 128px;
 }
 
-.meal-digest-container {
-  // TODO add table styling.
+.meal-digest-container td {
+  padding-right: 20px;
+}
+
+.meal-digest-container .header-cell {
+  font-weight: bold;
+  padding-bottom: 5px;
 }
 
 .accordion {

@@ -121,10 +121,34 @@ const calculateCalories = (gender, height, weight, age, activityLevel) => {
   }
 };
 
-const fetchRecepy = async (mealType) => {
+const fetchRecepy = async (mealType, caloriesPerMeal, ingredients) => {
   const APP_ID = 'c34ab5d9';
   const APP_KEY = 'a7a5284e0132e033649dbbd050765bf7';
   const URL_BASE = 'https://api.edamam.com/api/recipes/v2?type=public';
+
+  try {
+    const url = `${URL_BASE}&q=${encodeURIComponent(
+      ingredients
+    )}&app_id=${APP_ID}&app_key=${APP_KEY}&imageSize=REGULAR&mealType=${mealType}&calories=${caloriesPerMeal}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      hideErrorMessage();
+      return data['hits'][0];
+    } catch (error) {
+      showErrorMessage(`Could not get data`);
+    }
+  } catch (error) {
+    showErrorMessage(error);
+  }
+};
+
+const getThreeMealRecepies = async () => {
+  // Meal calories distribtutions.
+  const BREAKFAST_CALORIES_COEFFICENT = 0.3;
+  const LUNCH_CALORIES_COEFFICENT = 0.4;
+  const DINNER_CALORIES_COEFFICENT = 0.3;
 
   try {
     const height = await getUserInputHeight();
@@ -144,31 +168,35 @@ const fetchRecepy = async (mealType) => {
     );
 
     if (caloriesAmount) {
-      const url = `${URL_BASE}&q=${encodeURIComponent(
+      const breakfast = await fetchRecepy(
+        'Breakfast',
+        caloriesAmount * BREAKFAST_CALORIES_COEFFICENT,
         ingredients
-      )}&app_id=${APP_ID}&app_key=${APP_KEY}&imageSize=REGULAR&mealType=${mealType}&calories=${caloriesAmount}`;
-
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        hideErrorMessage();
-        return data['hits'][0];
-      } catch (error) {
-        showErrorMessage(`Could not get data`);
+      );
+      if (breakfast) {
+        localStorage.setItem('breakfast', JSON.stringify(breakfast));
       }
+
+      const lunch = await fetchRecepy(
+        'Brunch',
+        caloriesAmount * LUNCH_CALORIES_COEFFICENT,
+        ingredients
+      );
+      if (lunch) {
+        localStorage.setItem('lunch', JSON.stringify(lunch));
+      }
+
+      const dinner = await fetchRecepy(
+        'Dinner',
+        caloriesAmount * DINNER_CALORIES_COEFFICENT,
+        ingredients
+      );
+      if (dinner) {
+        localStorage.setItem('dinner', JSON.stringify(dinner));
+      }
+      location.href = '/meal-plan.html';
     }
   } catch (error) {
     showErrorMessage(error);
   }
-};
-
-const getThreeMealRecepies = async () => {
-  const breakfast = await fetchRecepy('Breakfast');
-  if (breakfast) {
-    localStorage.setItem('breakfast', JSON.stringify(breakfast));
-  }
-};
-
-const redirectToPage = () => {
-  location.href = '/meal-plan.html';
 };
