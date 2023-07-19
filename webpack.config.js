@@ -11,6 +11,12 @@ module.exports = {
     index: './scss/index.scss',
     meal_plan: './scss/meal-plan.scss',
   },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, '/'),
+    },
+    hot: true,
+  },
   module: {
     rules: [
       {
